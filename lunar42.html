@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Puzzle Challenge</title>
+</head>
+<body>
+    <h1>Welcome to the Puzzle Challenge</h1>
+    <p>Decrypt the secret message to proceed:</p>
+    <textarea id="encryptedMessage" rows="4" cols="50"></textarea><br>
+    <button onclick="decryptMessage()">Decrypt</button>
+    <p id="result"></p>
+
+    <script>
+        function decryptMessage() {
+            const encryptedMessage = document.getElementById('encryptedMessage').value;
+            // Replace this with your decryption logic
+            const decryptedMessage = decrypt(encryptedMessage);
+            const result = document.getElementById('result');
+            if (decryptedMessage === 'SECRET') {
+                result.textContent = 'Congratulations! You solved the puzzle.';
+            } else {
+                result.textContent = 'Sorry, try again.';
+            }
+        }
+
+        function decrypt(encryptedText) {
+            // Replace this function with your decryption algorithm
+            // For simplicity, this example just checks for a specific word
+            return encryptedText.toUpperCase();
+        }
+    </script>
+</body>
+</html>
