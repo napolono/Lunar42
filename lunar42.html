@@ -62,10 +62,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Puzzle Challenge</h1>
-        <p>Decrypt the secret message to proceed:</p>
+        <h1>Welcome to lunar42 Challenge</h1>
+        <p>type the secret message to proceed:</p>
         <textarea id="encryptedMessage" rows="4" cols="50"></textarea><br>
-        <button onclick="decryptMessage()">Decrypt</button>
+        <button onclick="decryptMessage()">submit</button>
         <p id="result"></p>
 
         <script>
@@ -74,7 +74,7 @@
                 // Replace this with your decryption logic
                 const decryptedMessage = decrypt(encryptedMessage);
                 const result = document.getElementById('result');
-                if (decryptedMessage === 'SECRET') {
+                if (decryptedMessage === '5272') {
                     result.innerHTML = 'Congratulations! You solved the puzzle. ' +
                                      '<a href="https://example.com">Click here</a> to continue.';
                 } else {
