@@ -5,12 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puzzle Challenge</title>
     <style>
-        /* ... (previous CSS styles) ... */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Puzzle Challenge #5</h1>
+        <h1>Welcome to the Puzzle Challenge</h1>
         <p>Decrypt the secret message to proceed:</p>
         <textarea id="encryptedMessage" rows="4" cols="50"></textarea><br>
         <button onclick="decryptMessage()">Decrypt</button>
@@ -24,7 +76,7 @@
                 const result = document.getElementById('result');
                 if (decryptedMessage === 'SECRET') {
                     result.innerHTML = 'Congratulations! You solved the puzzle. ' +
-                                      '<a href="https://forms.gle/YfCQD7bLkv9aDfrCA">Click here</a> to continue.';
+                                     '<a href="https://example.com">Click here</a> to continue.';
                 } else {
                     result.textContent = 'Sorry, try again.';
                 }
