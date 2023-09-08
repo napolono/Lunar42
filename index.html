@@ -1,43 +1,93 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file (if you have one) -->
-    <script src="script.js"></script> <!-- Link to your JavaScript file (if you have one) -->
+    <title>Puzzle Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Your Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <h1>Welcome to lunar42 Challenge</h1>
+        <p>Type the secret message to proceed:</p>
+        <textarea id="encryptedMessage" rows="4" cols="50"></textarea><br>
+        <button onclick="decryptMessage()">Submit</button>
+        <p id="result"></p>
 
-    <main>
-        <section id="section1">
-            <h2>Section 1</h2>
-            <p>This is the content of Section 1.</p>
-        </section>
+        <script>
+            function decryptMessage() {
+                const encryptedMessage = document.getElementById('encryptedMessage').value;
+                // Replace this with your decryption logic
+                const decryptedMessage = decrypt(encryptedMessage);
+                const result = document.getElementById('result');
+                if (decryptedMessage === '5272') {
+                    result.innerHTML = 'Congratulations! You solved the puzzle. ' +
+                                     '<a href="https://example.com">Click here</a> to continue.';
+                } else {
+                    result.textContent = 'Sorry, try again.';
+                }
+            }
 
-        <section id="section2">
-            <h2>Section 2</h2>
-            <p>This is the content of Section 2.</p>
-        </section>
-
-        <section id="section3">
-            <h2>Section 3</h2>
-            <p>This is the content of Section 3.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Your Website Name</p>
-    </footer>
+            function decrypt(encryptedText) {
+                // Replace this function with your decryption algorithm
+                // For simplicity, this example just checks for a specific word
+                return encryptedText.toUpperCase();
+            }
+        </script>
+    </div>
 </body>
 </html>
