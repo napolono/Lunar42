@@ -1,93 +1,61 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle Challenge</title>
+    <title>My Social Network</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #1877f2; /* Facebook Blue */
+            color: #fff;
+            padding: 10px;
             text-align: center;
-            margin: 0;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav ul {
+            list-style-type: none;
             padding: 0;
         }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .section {
             padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        p {
-            color: #555;
-        }
-
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        #result {
-            color: #007bff;
-            font-weight: bold;
-            font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to lunar42 Challenge</h1>
-        <p>Type the secret message to proceed:</p>
-        <textarea id="encryptedMessage" rows="4" cols="50"></textarea><br>
-        <button onclick="decryptMessage()">Submit</button>
-        <p id="result"></p>
+    <header>
+        <h1>Welcome to My Social Network</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#friends">Friends</a></li>
+            <li><a href="#community">Community</a></li>
+        </ul>
+    </nav>
+    
+    <div id="home" class="section">
+        <h2>Home</h2>
+        <p>Welcome to the Home section of My Social Network. Here you can post updates, photos, and more!</p>
+    </div>
 
-        <script>
-            function decryptMessage() {
-                const encryptedMessage = document.getElementById('encryptedMessage').value;
-                // Replace this with your decryption logic
-                const decryptedMessage = decrypt(encryptedMessage);
-                const result = document.getElementById('result');
-                if (decryptedMessage === '5272') {
-                    result.innerHTML = 'Congratulations! You solved the puzzle. ' +
-                                     '<a href="https://example.com">Click here</a> to continue.';
-                } else {
-                    result.textContent = 'Sorry, try again.';
-                }
-            }
+    <div id="friends" class="section">
+        <h2>Friends</h2>
+        <p>Connect with your friends and see what they're up to on My Social Network.</p>
+    </div>
 
-            function decrypt(encryptedText) {
-                // Replace this function with your decryption algorithm
-                // For simplicity, this example just checks for a specific word
-                return encryptedText.toUpperCase();
-            }
-        </script>
+    <div id="community" class="section">
+        <h2>Community</h2>
+        <p>Join various communities, share your interests, and engage with like-minded people.</p>
     </div>
 </body>
 </html>
